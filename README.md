@@ -69,7 +69,7 @@ Personal games built in Unreal Engine, with models and assets made in Blender.
 </tr>
 </table>
 
-### Activity
+<br/>
 
 <img src="assets/activity.svg" alt="GitHub activity over the last year, drawn as an oscilloscope trace" width="100%">
 
