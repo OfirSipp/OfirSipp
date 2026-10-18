@@ -12,8 +12,6 @@ Off the clock I keep building: multi-agent AI systems, productivity tools, and g
 
 <br/>
 
-<img src="assets/timeline.svg" alt="Career timeline: Israeli Air Force, Navigation & GNSS Specialist (2022–2025); Gate Technologies, HW development (2026–); practical electronics engineering diploma, summa cum laude (2022); B.Sc. EE at HIT, expected 2028" width="100%">
-
 ### Tools
 
 **HDL & FPGA**<br/>
