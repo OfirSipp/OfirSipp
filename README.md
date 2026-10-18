@@ -2,7 +2,7 @@
 
 <br/>
 
-I work where digital logic meets real hardware — **designing FPGA logic in VHDL, building automated test equipment, and finding out why hardware fails**. I spent three and a half years in the Israeli Air Force as a navigation & GNSS specialist, developing FPGA logic and VHDL / Python test automation. Today I do hardware development and production support at Gate Technologies — validation and failure analysis of safety-critical fuze electronics — while studying for a B.Sc. in Electrical Engineering at HIT.
+I work where digital logic meets real hardware — **designing FPGA logic in VHDL, building automated test equipment, and finding out why hardware fails**. I spent three and a half years as a navigation & GNSS specialist, developing FPGA logic and VHDL / Python automation. 
 
 Off the clock I keep building: multi-agent AI systems, productivity tools, and games in Unreal Engine and Blender.
 
