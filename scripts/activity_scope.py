@@ -3,8 +3,10 @@
     GITHUB_TOKEN=... python scripts/activity_scope.py [assets]
     python scripts/activity_scope.py assets --demo     # random data, for styling
 
-Runs daily from .github/workflows/activity-scope.yml. Weekly totals are drawn
-as a step trace on a scope graticule; the beam sweeps, holds, and re-triggers.
+Runs daily from .github/workflows/activity-scope.yml. The window runs from
+account creation (or a year back) to today: CH1 is contributions per day (per
+week once the window passes ~4 months), CH2 is the running total. The beam
+sweeps, holds, and re-triggers.
 """
 
 import datetime as dt
@@ -35,6 +37,7 @@ SWEEP = 9.0                                      # seconds per sweep cycle
 QUERY = """
 query($login: String!) {
   user(login: $login) {
+    createdAt
     contributionsCollection {
       contributionCalendar {
         totalContributions
@@ -58,7 +61,10 @@ def fetch():
         data = json.load(resp)
     if "errors" in data:
         raise SystemExit(data["errors"])
-    return data["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+    user = data["data"]["user"]
+    cal = user["contributionsCollection"]["contributionCalendar"]
+    cal["createdAt"] = user["createdAt"][:10]
+    return cal
 
 
 def demo():
@@ -72,7 +78,13 @@ def demo():
             n = rnd.choice([0, 0, 0, 1, 2, 3, 5]) if rnd.random() < 0.6 else 0
             days.append({"date": day.isoformat(), "contributionCount": n})
         weeks.append({"contributionDays": days})
-    return {"totalContributions": sum(d["contributionCount"] for w in weeks for d in w["contributionDays"]), "weeks": weeks}
+    created = (dt.date.today() - dt.timedelta(days=40)).isoformat()
+    for w in weeks:
+        for d in w["contributionDays"]:
+            if d["date"] < created:
+                d["contributionCount"] = 0
+    return {"totalContributions": sum(d["contributionCount"] for w in weeks for d in w["contributionDays"]),
+            "weeks": weeks, "createdAt": created}
 
 
 def empty():
@@ -87,21 +99,59 @@ def f(x):
     return "0" if s == "-0" else s
 
 
-def render(cal):
-    weeks = cal["weeks"]
-    counts = [sum(d["contributionCount"] for d in w["contributionDays"]) for w in weeks]
-    days = [d for w in weeks for d in w["contributionDays"]]
-    total = cal["totalContributions"]
-    peak = max(counts) if counts else 0
-    active = sum(1 for d in days if d["contributionCount"] > 0)
+MIN_SPAN = 21            # days; a brand-new account still gets a readable window
+DAILY_MAX = 120          # beyond this many days, bin by week
 
-    n = len(counts)
-    sw = (SX1 - SX0) / n
+
+def window(cal):
+    """Chronological (date, count) pairs from account creation (or a year ago) to today."""
+    days = [(dt.date.fromisoformat(d["date"]), d["contributionCount"])
+            for w in cal["weeks"] for d in w["contributionDays"]]
+    days.sort()
+    today = days[-1][0]
+    created = dt.date.fromisoformat(cal.get("createdAt") or days[0][0].isoformat())
+    start = max(min(created, today - dt.timedelta(days=MIN_SPAN - 1)), days[0][0])
+    return [(d, n) for d, n in days if d >= start], created
+
+
+def bins_of(days):
+    if len(days) <= DAILY_MAX:
+        return [(d, n) for d, n in days], "day"
+    out = []
+    for i in range(0, len(days), 7):
+        chunk = days[i:i + 7]
+        out.append((chunk[0][0], sum(n for _, n in chunk)))
+    return out, "week"
+
+
+def streak(days):
+    run = 0
+    for i, (_, n) in enumerate(reversed(days)):
+        if n:
+            run += 1
+        elif i == 0:
+            continue          # today can still be empty
+        else:
+            break
+    return run
+
+
+def render(cal):
+    days, created = window(cal)
+    bins, unit = bins_of(days)
+    counts = [n for _, n in bins]
+    total = sum(n for _, n in days)
+    peak = max(counts) if counts else 0
+    active = sum(1 for _, n in days if n)
+    run = streak(days)
+
+    nb = len(bins)
+    sw = (SX1 - SX0) / nb
     y_of = lambda c: BASE - (c / peak) * (BASE - CEIL) if peak else BASE
 
+    # CH1: per-bin contributions, step trace
     trace = [f"M{SX0} {f(y_of(counts[0]))}"]
-    x = SX0
-    prev = None
+    x, prev = SX0, None
     for c in counts:
         y = y_of(c)
         if prev is not None and y != prev:
@@ -111,6 +161,14 @@ def render(cal):
         prev = y
     trace_d = "".join(trace)
     area_d = f"{trace_d}V{BASE}H{SX0}Z"
+
+    # CH2: running total, ramps across each bin
+    acc, pts = 0, [f"M{SX0} {BASE}"]
+    for i, c in enumerate(counts):
+        acc += c
+        y = BASE - (acc / total) * (BASE - CEIL) if total else BASE
+        pts.append(f"L{f(SX0 + (i + 1) * sw)} {f(y)}")
+    cum_d = "".join(pts)
 
     # graticule
     gx = (SX1 - SX0) / DIV_X
@@ -123,13 +181,22 @@ def render(cal):
     ticks += "".join(f'<line x1="{f(cxm - 3)}" y1="{f(SY0 + j * gy / 5)}" x2="{f(cxm + 3)}" y2="{f(SY0 + j * gy / 5)}"/>'
                      for j in range(1, DIV_Y * 5) if j % 5)
 
-    months, last = [], None
-    for i, w in enumerate(weeks):
-        first = dt.date.fromisoformat(w["contributionDays"][0]["date"])
-        if first.month != last:
-            if i > 0 and i < n - 2:
-                months.append(f'<text x="{f(SX0 + i * sw)}" y="{SY1 + 20}">{first.strftime("%b")}</text>')
-            last = first.month
+    # date labels, ~8 across
+    step = max(1, round(nb / 8))
+    labels = "".join(
+        f'<text x="{f(SX0 + (i + 0.5) * sw)}" y="{SY1 + 20}" text-anchor="middle">{d:%b} {d.day}</text>'
+        for i, (d, _) in enumerate(bins) if i % step == 0 and i < nb - step / 2)
+
+    # account-creation marker when it falls inside the window
+    join = ""
+    for i, (d, _) in enumerate(bins):
+        if d >= created and d.isoformat() != bins[0][0].isoformat():
+            jx = SX0 + i * sw
+            join = (f'<line x1="{f(jx)}" y1="{SY0 + 6}" x2="{f(jx)}" y2="{SY1 - 1}" stroke="{DIM}" stroke-dasharray="2 4"/>'
+                    f'<text x="{f(jx + 6)}" y="{SY0 + 16}" font-family="{MONO}" font-size="10" fill="{DIM}">joined GitHub</text>')
+            break
+        if d >= created:
+            break
 
     quiet = "" if total else (
         f'<text x="{f(cxm)}" y="{f(cym - 10)}" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{DIM}">'
@@ -137,9 +204,12 @@ def render(cal):
 
     reveal_kt = "0;0.45;1"
     updated = dt.date.today().isoformat()
-    readout = f"Σ {total}   ·   peak {peak}/wk   ·   {active} active days"
+    since = f"{max(created, bins[0][0]):%b %Y}"
+    readout = (f"Σ {total} since {since}   ·   {active} active day{"" if active == 1 else "s"}   ·   "
+               f"streak {run} d   ·   peak {peak}/{unit}")
+    span_txt = f"{len(days)} days" if unit == "day" else f"{nb} weeks"
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{total} contributions in the last year, drawn as an oscilloscope trace">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{total} contributions since {since}, drawn as an oscilloscope trace">
   <defs>
     <filter id="glow" x="-10%" y="-40%" width="120%" height="180%">
       <feGaussianBlur stdDeviation="2.4" result="b"/>
@@ -169,6 +239,7 @@ def render(cal):
     <line x1="{f(cxm)}" y1="{SY0}" x2="{f(cxm)}" y2="{SY1}"/>
     {ticks}
   </g>
+  {join}
   {quiet}
 
   <!-- channel + trigger markers -->
@@ -177,11 +248,12 @@ def render(cal):
   <path d="M{SX1 + 1} {f(cym)}L{SX1 + 9} {f(cym - 6)}V{f(cym + 6)}Z" fill="{AMBER}"/>
   <text x="{SX1 + 13}" y="{f(cym + 4)}" font-family="{MONO}" font-size="10" fill="{AMBER}">T</text>
 
-  <!-- trace -->
+  <!-- traces -->
   <g>
     <animate attributeName="opacity" values="1;1;0.35;0;1" keyTimes="0;0.86;0.95;0.99;1" dur="{SWEEP}s" repeatCount="indefinite"/>
     <g clip-path="url(#sweep)">
       <path d="{area_d}" fill="url(#area)"/>
+      <path d="{cum_d}" fill="none" stroke="{AMBER}" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
       <path d="{trace_d}" fill="none" stroke="{ACCENT}" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
     </g>
   </g>
@@ -191,9 +263,9 @@ def render(cal):
   </rect>
 
   <g font-family="{MONO}" font-size="11" fill="{DIM}">
-    {"".join(months)}
+    {labels}
     <text x="{SX0}" y="{H - 16}">updated {updated} · re-rendered daily by GitHub Actions</text>
-    <text x="{SX1}" y="{H - 16}" text-anchor="end">CH1 commits / week  ·  ≈1 month / div</text>
+    <text x="{SX1}" y="{H - 16}" text-anchor="end" xml:space="preserve"><tspan fill="{ACCENT}">━</tspan> CH1 contributions / {unit}   <tspan fill="{AMBER}">━</tspan> CH2 running total   ·   {span_txt}</text>
   </g>
 </svg>
 '''

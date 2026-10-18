@@ -53,17 +53,17 @@ def write(name, svg):
 
 # ================================================================= banner ===
 def banner():
-    W, H = 1200, 300
-    cx, cy = 960, 140
-    PKG = 150
+    W, H = 1200, 340
+    cx, cy = 950, 160
+    PKG = 196
     px0, py0 = cx - PKG / 2, cy - PKG / 2          # package top-left
-    N_PINS, PITCH, PIN_L = 14, 9, 9
+    N_PINS, PITCH, PIN_L = 18, 9.5, 10
     off = (PKG - (N_PINS - 1) * PITCH) / 2
 
     def pin_pos(i):
         return off + i * PITCH
 
-    traced = {"left": [2, 5, 8, 11], "right": [3, 6, 9, 12], "top": [4, 10], "bottom": [3, 9]}
+    traced = {"left": [2, 6, 11, 15], "right": [3, 7, 10, 14], "top": [5, 12], "bottom": [4, 13]}
     lit = {(side, i) for side, idx in traced.items() for i in idx}
 
     pins = []
@@ -81,7 +81,7 @@ def banner():
 
     # traces: (path from outside -> pin for inputs, pin -> outside for outputs)
     traces = []
-    fan = [-24, -9, 9, 24]
+    fan = [-28, -10, 10, 28]
     for k, i in enumerate(traced["left"]):
         y = py0 + pin_pos(i)
         y2 = y + fan[k]
@@ -94,12 +94,12 @@ def banner():
     for k, i in enumerate(traced["top"]):
         x = px0 + pin_pos(i)
         x2 = x + (-20 if k == 0 else 20)
-        traces.append((f"M{f(x2)} 22 V36 L{f(x)} {f(py0 - 32)} V{f(py0 - PIN_L)}", (x2, 22), True))
+        traces.append((f"M{f(x2)} 16 V{f(py0 - PIN_L - 26)} L{f(x)} {f(py0 - PIN_L - 10)} V{f(py0 - PIN_L)}", (x2, 16), True))
     for k, i in enumerate(traced["bottom"]):
         x = px0 + pin_pos(i)
         x2 = x + (-20 if k == 0 else 20)
         y0 = py0 + PKG + PIN_L
-        traces.append((f"M{f(x)} {f(y0)} V{f(y0 + 14)} L{f(x2)} {f(y0 + 32)} V{f(y0 + 40)}", (x2, y0 + 40), False))
+        traces.append((f"M{f(x)} {f(y0)} V{f(y0 + 8)} L{f(x2)} {f(y0 + 22)} V{f(y0 + 28)}", (x2, y0 + 28), False))
 
     trace_paths, vias, packets = [], [], []
     rnd = random.Random(7020)
@@ -114,12 +114,12 @@ def banner():
             f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.85;1" dur="{dur}s" begin="{begin}s" repeatCount="indefinite"/>'
             f'</circle>')
 
-    # die: 6x6 logic cells, a diagonal configuration wave, some cells "in use"
-    DIE = 108
+    # die: 7x7 logic cells, a diagonal configuration wave, some cells "in use"
+    DIE = 144
     dx0, dy0 = cx - DIE / 2, cy - DIE / 2
-    CELL, GAP, COUNT = 13, 3.4, 6
+    CELL, GAP, COUNT = 15, 3.5, 7
     pad = (DIE - (COUNT * CELL + (COUNT - 1) * GAP)) / 2
-    used = set(rnd.sample(range(COUNT * COUNT), 13))
+    used = set(rnd.sample(range(COUNT * COUNT), 18))
     cells = []
     for r in range(COUNT):
         for c in range(COUNT):
@@ -133,7 +133,7 @@ def banner():
                 f'keyTimes="0;0.02;0.1;0.4;1" dur="3.4s" begin="{begin}s" repeatCount="indefinite"/></rect>')
 
     status = "DONE   ·   TIMING MET   ·   WNS +0.214 ns"
-    status_w = len(status) * 7.0          # 10px mono + 1px letter-spacing
+    status_w = len(status) * 7.3          # 10.5px mono + 1px letter-spacing
     led_x = cx - status_w / 2 - 14
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Ofir Sipouren - Practical Engineer, Embedded Systems and FPGA">
@@ -157,16 +157,16 @@ def banner():
   <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="12" fill="{BG}"/>
   <g clip-path="url(#frame)">
     <rect x="560" y="0" width="640" height="{H}" fill="url(#dots)" mask="url(#dotMask)"/>
-    <circle cx="{cx}" cy="{cy}" r="190" fill="url(#halo)"/>
+    <circle cx="{cx}" cy="{cy}" r="240" fill="url(#halo)"/>
   </g>
 
   <!-- identity -->
-  <rect x="64" y="70" width="3" height="16" fill="{ACCENT}"/>
-  <text x="76" y="83" font-family="{SANS}" font-size="13" font-weight="600" letter-spacing="3" fill="{ACCENT}">EMBEDDED · FPGA · HW VALIDATION</text>
-  <text x="62" y="146" font-family="{SANS}" font-size="52" font-weight="600" fill="{TEXT}">Ofir Sipouren</text>
-  <text x="64" y="184" font-family="{SANS}" font-size="22" font-weight="400" fill="{MUTED}">Practical Engineer · Embedded Systems &amp; FPGA</text>
-  <line x1="64" y1="210" x2="560" y2="210" stroke="{BORDER}"/>
-  <text x="64" y="238" font-family="{MONO}" font-size="13.5" fill="{MUTED}" xml:space="preserve">VHDL  ·  Zynq SoC  ·  Python test automation  ·  Failure analysis <tspan fill="{ACCENT}">▌<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/></tspan></text>
+  <rect x="64" y="83" width="3" height="17" fill="{ACCENT}"/>
+  <text x="76" y="97" font-family="{SANS}" font-size="14" font-weight="600" letter-spacing="3" fill="{ACCENT}">EMBEDDED · FPGA · HW VALIDATION</text>
+  <text x="61" y="170" font-family="{SANS}" font-size="60" font-weight="600" fill="{TEXT}">Ofir Sipouren</text>
+  <text x="64" y="211" font-family="{SANS}" font-size="24" font-weight="400" fill="{MUTED}">Practical Engineer · Embedded Systems &amp; FPGA</text>
+  <line x1="64" y1="238" x2="600" y2="238" stroke="{BORDER}"/>
+  <text x="64" y="268" font-family="{MONO}" font-size="14.5" fill="{MUTED}" xml:space="preserve">VHDL  ·  Zynq SoC  ·  Python test automation  ·  Failure analysis <tspan fill="{ACCENT}">▌<animate attributeName="fill-opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/></tspan></text>
 
   <!-- traces -->
   <g fill="none" stroke="{BORDER}" stroke-width="1.5" stroke-linejoin="round">{"".join(trace_paths)}</g>
@@ -179,13 +179,13 @@ def banner():
   <circle cx="{f(px0 + 11)}" cy="{f(py0 + 11)}" r="3" fill="{BORDER}"/>
   <rect x="{f(dx0)}" y="{f(dy0)}" width="{DIE}" height="{DIE}" rx="3" fill="{DEEP}" stroke="{BORDER}"/>
   {"".join(cells)}
-  <text x="{cx}" y="{f(py0 + PKG - 9)}" font-family="{MONO}" font-size="8" fill="{DIM}" text-anchor="middle" letter-spacing="1.5">OS-7020 · 2026</text>
+  <text x="{cx}" y="{f(py0 + PKG - 11)}" font-family="{MONO}" font-size="9" fill="{DIM}" text-anchor="middle" letter-spacing="1.5">OS-7020 · 2026</text>
 
   <!-- status -->
-  <circle cx="{f(led_x)}" cy="268" r="4" fill="{ACCENT}" filter="url(#glow)">
+  <circle cx="{f(led_x)}" cy="318" r="4.5" fill="{ACCENT}" filter="url(#glow)">
     <animate attributeName="fill-opacity" values="1;0.35;1" dur="2.4s" repeatCount="indefinite"/>
   </circle>
-  <text x="{cx}" y="272" font-family="{MONO}" font-size="10" fill="{MUTED}" text-anchor="middle" letter-spacing="1" xml:space="preserve">{status}</text>
+  <text x="{cx}" y="322" font-family="{MONO}" font-size="10.5" fill="{MUTED}" text-anchor="middle" letter-spacing="1" xml:space="preserve">{status}</text>
 
   <rect x="0.5" y="0.5" width="{W - 1}" height="{H - 1}" rx="12" fill="none" stroke="{BORDER}"/>
 </svg>
@@ -458,7 +458,7 @@ def timeline():
     <!-- edu -->
     <path d="M{f(dia_x)} {EDU_Y - 9}L{f(dia_x + 9)} {EDU_Y}L{f(dia_x)} {EDU_Y + 9}L{f(dia_x - 9)} {EDU_Y}Z" fill="{AMBER}"/>
     <text x="{f(dia_x + 20)}" y="{EDU_Y - 3}" font-family="{SANS}" font-size="15" font-weight="600" fill="{TEXT}">Practical Electronics Eng. <tspan font-weight="400" fill="{MUTED}">· summa cum laude</tspan></text>
-    <text x="{f(dia_x + 20)}" y="{EDU_Y + 15}" font-family="{MONO}" font-size="11.5" fill="{DIM}">Amal B College · 2022 · embedded systems &amp; FPGA</text>
+    <text x="{f(dia_x + 20)}" y="{EDU_Y + 15}" font-family="{MONO}" font-size="11.5" fill="{DIM}">Amal B College · 2022</text>
     <path d="{bsc}" fill="url(#studying)" stroke="url(#studyingStroke)" stroke-width="1.4" clip-path="url(#past)"/>
     <path d="{bsc}" fill="{AMBER}" fill-opacity="0.14" stroke="{AMBER}" stroke-width="1.4" stroke-dasharray="5 5" clip-path="url(#future)"/>
     <text x="{f(xn + 14)}" y="{EDU_Y - 3}" font-family="{SANS}" font-size="15" font-weight="600" fill="{TEXT}">B.Sc. EE <tspan font-weight="400" fill="{MUTED}">· HIT</tspan></text>
