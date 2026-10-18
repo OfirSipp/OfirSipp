@@ -42,7 +42,7 @@ Automatic test equipment for a legacy avionics audio-warning unit — my 2022 di
 </td>
 <td width="50%" valign="top">
 
-**Gate Tasks**<br/>
+**[Gate Tasks](https://github.com/OfirSipp/Gate-Tasks)**<br/>
 A task manager for a multi-person office, with a separate board for every person on the team.
 
 `Python` `team tooling`
