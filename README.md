@@ -32,7 +32,7 @@ Off the clock I keep building: multi-agent AI systems, productivity tools, and g
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
 **[Avionics UUT Tester](https://github.com/OfirSipp/Avionics-UUT-Tester)**<br/>
 Automatic test equipment for a legacy avionics audio-warning unit — my 2022 diploma project, re-implemented in 2026. Alert-tone recognition runs in VHDL on the FPGA fabric, the Zynq's ARM core drives the test procedure over AXI, and a custom relay / ADC / DAC board connects to the unit under test.
@@ -40,7 +40,7 @@ Automatic test equipment for a legacy avionics audio-warning unit — my 2022 di
 `VHDL-2008` `Zynq-7020` `AXI` `bare-metal C` `ILA`
 
 </td>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
 **[Gate Tasks](https://github.com/OfirSipp/Gate-Tasks)**<br/>
 A task manager for a multi-person office, with a separate board for every person on the team.
@@ -48,7 +48,7 @@ A task manager for a multi-person office, with a separate board for every person
 `Python` `team tooling`
 
 </td>
-<td width="50%" valign="top">
+<td width="33%" valign="top">
 
 **Game projects**<br/>
 Personal games built in Unreal Engine, with models and assets made in Blender.
