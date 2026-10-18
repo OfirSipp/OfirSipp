@@ -42,16 +42,6 @@ Automatic test equipment for a legacy avionics audio-warning unit — my 2022 di
 </td>
 <td width="50%" valign="top">
 
-**AI Trading Floor**<br/>
-A team of AI agents that day-trade across asset classes, each working its own desk in a pixel-art office. Paper trading first — a live broker only once it proves itself.
-
-`multi-agent` `LLM agents` `paper trading`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
 **Gate Tasks**<br/>
 A task manager for a multi-person office, with a separate board for every person on the team.
 
