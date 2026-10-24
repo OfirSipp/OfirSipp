@@ -41,9 +41,9 @@
   <g>
     <animate attributeName="opacity" values="1;1;0.35;0;1" keyTimes="0;0.86;0.95;0.99;1" dur="9.0s" repeatCount="indefinite"/>
     <g clip-path="url(#sweep)">
-      <path d="M64 202.3H112.7V248H161.5H210.2H258.9V202.3H307.6V248H356.4V190.9H405.1V248H453.8H502.5V213.7H551.3V248H600V202.3H648.7V248H697.5H746.2V88H794.9V168H843.6V122.3H892.4V248H941.1H989.8H1038.5H1087.3H1136V248H64Z" fill="url(#area)"/>
-      <path d="M64 248L112.7 235.7L161.5 235.7L210.2 235.7L258.9 235.7L307.6 223.4L356.4 223.4L405.1 208L453.8 208L502.5 208L551.3 198.8L600 198.8L648.7 186.5L697.5 186.5L746.2 186.5L794.9 143.4L843.6 121.8L892.4 88L941.1 88L989.8 88L1038.5 88L1087.3 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
-      <path d="M64 202.3H112.7V248H161.5H210.2H258.9V202.3H307.6V248H356.4V190.9H405.1V248H453.8H502.5V213.7H551.3V248H600V202.3H648.7V248H697.5H746.2V88H794.9V168H843.6V122.3H892.4V248H941.1H989.8H1038.5H1087.3H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M64 202.3H110.6V248H157.2H203.8H250.4V202.3H297V248H343.7V190.9H390.3V248H436.9H483.5V213.7H530.1V248H576.7V202.3H623.3V248H669.9H716.5V88H763.1V168H809.7V122.3H856.3V248H903H949.6H996.2H1042.8H1089.4H1136V248H64Z" fill="url(#area)"/>
+      <path d="M64 248L110.6 235.7L157.2 235.7L203.8 235.7L250.4 235.7L297 223.4L343.7 223.4L390.3 208L436.9 208L483.5 208L530.1 198.8L576.7 198.8L623.3 186.5L669.9 186.5L716.5 186.5L763.1 143.4L809.7 121.8L856.3 88L903 88L949.6 88L996.2 88L1042.8 88L1089.4 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
+      <path d="M64 202.3H110.6V248H157.2H203.8H250.4V202.3H297V248H343.7V190.9H390.3V248H436.9H483.5V213.7H530.1V248H576.7V202.3H623.3V248H669.9H716.5V88H763.1V168H809.7V122.3H856.3V248H903H949.6H996.2H1042.8H1089.4H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
     </g>
   </g>
   <rect x="64" y="71" width="2" height="190" fill="#2dd4bf" filter="url(#glow)" opacity="0">
@@ -52,8 +52,8 @@
   </rect>
 
   <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#6e7681">
-    <text x="88.4" y="282" text-anchor="middle">Oct 2</text><text x="234.5" y="282" text-anchor="middle">Oct 5</text><text x="380.7" y="282" text-anchor="middle">Oct 8</text><text x="526.9" y="282" text-anchor="middle">Oct 11</text><text x="673.1" y="282" text-anchor="middle">Oct 14</text><text x="819.3" y="282" text-anchor="middle">Oct 17</text><text x="965.5" y="282" text-anchor="middle">Oct 20</text>
-    <text x="64" y="304">updated 2026-10-23 · re-rendered daily by GitHub Actions</text>
-    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   22 days</text>
+    <text x="87.3" y="282" text-anchor="middle">Oct 2</text><text x="227.1" y="282" text-anchor="middle">Oct 5</text><text x="367" y="282" text-anchor="middle">Oct 8</text><text x="506.8" y="282" text-anchor="middle">Oct 11</text><text x="646.6" y="282" text-anchor="middle">Oct 14</text><text x="786.4" y="282" text-anchor="middle">Oct 17</text><text x="926.3" y="282" text-anchor="middle">Oct 20</text><text x="1066.1" y="282" text-anchor="middle">Oct 23</text>
+    <text x="64" y="304">updated 2026-10-24 · re-rendered daily by GitHub Actions</text>
+    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   23 days</text>
   </g>
 </svg>
