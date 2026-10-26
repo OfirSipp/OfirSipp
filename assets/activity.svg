@@ -41,9 +41,9 @@
   <g>
     <animate attributeName="opacity" values="1;1;0.35;0;1" keyTimes="0;0.86;0.95;0.99;1" dur="9.0s" repeatCount="indefinite"/>
     <g clip-path="url(#sweep)">
-      <path d="M64 202.3H108.7V248H153.3H198H242.7V202.3H287.3V248H332V190.9H376.7V248H421.3H466V213.7H510.7V248H555.3V202.3H600V248H644.7H689.3V88H734V168H778.7V122.3H823.3V248H868H912.7H957.3H1002H1046.7H1091.3H1136V248H64Z" fill="url(#area)"/>
-      <path d="M64 248L108.7 235.7L153.3 235.7L198 235.7L242.7 235.7L287.3 223.4L332 223.4L376.7 208L421.3 208L466 208L510.7 198.8L555.3 198.8L600 186.5L644.7 186.5L689.3 186.5L734 143.4L778.7 121.8L823.3 88L868 88L912.7 88L957.3 88L1002 88L1046.7 88L1091.3 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
-      <path d="M64 202.3H108.7V248H153.3H198H242.7V202.3H287.3V248H332V190.9H376.7V248H421.3H466V213.7H510.7V248H555.3V202.3H600V248H644.7H689.3V88H734V168H778.7V122.3H823.3V248H868H912.7H957.3H1002H1046.7H1091.3H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M64 202.3H106.9V248H149.8H192.6H235.5V202.3H278.4V248H321.3V190.9H364.2V248H407H449.9V213.7H492.8V248H535.7V202.3H578.6V248H621.4H664.3V88H707.2V168H750.1V122.3H793V248H835.8H878.7H921.6H964.5H1007.4H1050.2H1093.1H1136V248H64Z" fill="url(#area)"/>
+      <path d="M64 248L106.9 235.7L149.8 235.7L192.6 235.7L235.5 235.7L278.4 223.4L321.3 223.4L364.2 208L407 208L449.9 208L492.8 198.8L535.7 198.8L578.6 186.5L621.4 186.5L664.3 186.5L707.2 143.4L750.1 121.8L793 88L835.8 88L878.7 88L921.6 88L964.5 88L1007.4 88L1050.2 88L1093.1 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
+      <path d="M64 202.3H106.9V248H149.8H192.6H235.5V202.3H278.4V248H321.3V190.9H364.2V248H407H449.9V213.7H492.8V248H535.7V202.3H578.6V248H621.4H664.3V88H707.2V168H750.1V122.3H793V248H835.8H878.7H921.6H964.5H1007.4H1050.2H1093.1H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
     </g>
   </g>
   <rect x="64" y="71" width="2" height="190" fill="#2dd4bf" filter="url(#glow)" opacity="0">
@@ -52,8 +52,8 @@
   </rect>
 
   <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#6e7681">
-    <text x="86.3" y="282" text-anchor="middle">Oct 2</text><text x="220.3" y="282" text-anchor="middle">Oct 5</text><text x="354.3" y="282" text-anchor="middle">Oct 8</text><text x="488.3" y="282" text-anchor="middle">Oct 11</text><text x="622.3" y="282" text-anchor="middle">Oct 14</text><text x="756.3" y="282" text-anchor="middle">Oct 17</text><text x="890.3" y="282" text-anchor="middle">Oct 20</text><text x="1024.3" y="282" text-anchor="middle">Oct 23</text>
-    <text x="64" y="304">updated 2026-10-25 · re-rendered daily by GitHub Actions</text>
-    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   24 days</text>
+    <text x="85.4" y="282" text-anchor="middle">Oct 2</text><text x="214.1" y="282" text-anchor="middle">Oct 5</text><text x="342.7" y="282" text-anchor="middle">Oct 8</text><text x="471.4" y="282" text-anchor="middle">Oct 11</text><text x="600" y="282" text-anchor="middle">Oct 14</text><text x="728.6" y="282" text-anchor="middle">Oct 17</text><text x="857.3" y="282" text-anchor="middle">Oct 20</text><text x="985.9" y="282" text-anchor="middle">Oct 23</text>
+    <text x="64" y="304">updated 2026-10-26 · re-rendered daily by GitHub Actions</text>
+    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   25 days</text>
   </g>
 </svg>
