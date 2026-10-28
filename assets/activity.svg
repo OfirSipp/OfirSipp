@@ -41,9 +41,9 @@
   <g>
     <animate attributeName="opacity" values="1;1;0.35;0;1" keyTimes="0;0.86;0.95;0.99;1" dur="9.0s" repeatCount="indefinite"/>
     <g clip-path="url(#sweep)">
-      <path d="M64 202.3H105.2V248H146.5H187.7H228.9V202.3H270.2V248H311.4V190.9H352.6V248H393.8H435.1V213.7H476.3V248H517.5V202.3H558.8V248H600H641.2V88H682.5V168H723.7V122.3H764.9V248H806.2H847.4H888.6H929.8H971.1H1012.3H1053.5H1094.8H1136V248H64Z" fill="url(#area)"/>
-      <path d="M64 248L105.2 235.7L146.5 235.7L187.7 235.7L228.9 235.7L270.2 223.4L311.4 223.4L352.6 208L393.8 208L435.1 208L476.3 198.8L517.5 198.8L558.8 186.5L600 186.5L641.2 186.5L682.5 143.4L723.7 121.8L764.9 88L806.2 88L847.4 88L888.6 88L929.8 88L971.1 88L1012.3 88L1053.5 88L1094.8 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
-      <path d="M64 202.3H105.2V248H146.5H187.7H228.9V202.3H270.2V248H311.4V190.9H352.6V248H393.8H435.1V213.7H476.3V248H517.5V202.3H558.8V248H600H641.2V88H682.5V168H723.7V122.3H764.9V248H806.2H847.4H888.6H929.8H971.1H1012.3H1053.5H1094.8H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M64 202.3H103.7V248H143.4H183.1H222.8V202.3H262.5V248H302.2V190.9H341.9V248H381.6H421.3V213.7H461V248H500.7V202.3H540.4V248H580.1H619.9V88H659.6V168H699.3V122.3H739V248H778.7H818.4H858.1H897.8H937.5H977.2H1016.9H1056.6H1096.3H1136V248H64Z" fill="url(#area)"/>
+      <path d="M64 248L103.7 235.7L143.4 235.7L183.1 235.7L222.8 235.7L262.5 223.4L302.2 223.4L341.9 208L381.6 208L421.3 208L461 198.8L500.7 198.8L540.4 186.5L580.1 186.5L619.9 186.5L659.6 143.4L699.3 121.8L739 88L778.7 88L818.4 88L858.1 88L897.8 88L937.5 88L977.2 88L1016.9 88L1056.6 88L1096.3 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
+      <path d="M64 202.3H103.7V248H143.4H183.1H222.8V202.3H262.5V248H302.2V190.9H341.9V248H381.6H421.3V213.7H461V248H500.7V202.3H540.4V248H580.1H619.9V88H659.6V168H699.3V122.3H739V248H778.7H818.4H858.1H897.8H937.5H977.2H1016.9H1056.6H1096.3H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
     </g>
   </g>
   <rect x="64" y="71" width="2" height="190" fill="#2dd4bf" filter="url(#glow)" opacity="0">
@@ -52,8 +52,8 @@
   </rect>
 
   <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#6e7681">
-    <text x="84.6" y="282" text-anchor="middle">Oct 2</text><text x="208.3" y="282" text-anchor="middle">Oct 5</text><text x="332" y="282" text-anchor="middle">Oct 8</text><text x="455.7" y="282" text-anchor="middle">Oct 11</text><text x="579.4" y="282" text-anchor="middle">Oct 14</text><text x="703.1" y="282" text-anchor="middle">Oct 17</text><text x="826.8" y="282" text-anchor="middle">Oct 20</text><text x="950.5" y="282" text-anchor="middle">Oct 23</text><text x="1074.2" y="282" text-anchor="middle">Oct 26</text>
-    <text x="64" y="304">updated 2026-10-27 · re-rendered daily by GitHub Actions</text>
-    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   26 days</text>
+    <text x="83.9" y="282" text-anchor="middle">Oct 2</text><text x="203" y="282" text-anchor="middle">Oct 5</text><text x="322.1" y="282" text-anchor="middle">Oct 8</text><text x="441.2" y="282" text-anchor="middle">Oct 11</text><text x="560.3" y="282" text-anchor="middle">Oct 14</text><text x="679.4" y="282" text-anchor="middle">Oct 17</text><text x="798.5" y="282" text-anchor="middle">Oct 20</text><text x="917.6" y="282" text-anchor="middle">Oct 23</text><text x="1036.7" y="282" text-anchor="middle">Oct 26</text>
+    <text x="64" y="304">updated 2026-10-28 · re-rendered daily by GitHub Actions</text>
+    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   27 days</text>
   </g>
 </svg>
