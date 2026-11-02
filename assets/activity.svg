@@ -41,9 +41,9 @@
   <g>
     <animate attributeName="opacity" values="1;1;0.35;0;1" keyTimes="0;0.86;0.95;0.99;1" dur="9.0s" repeatCount="indefinite"/>
     <g clip-path="url(#sweep)">
-      <path d="M64 202.3H98.6V248H133.2H167.7H202.3V202.3H236.9V248H271.5V190.9H306.1V248H340.6H375.2V213.7H409.8V248H444.4V202.3H479V248H513.5H548.1V88H582.7V168H617.3V122.3H651.9V248H686.5H721H755.6H790.2H824.8H859.4H893.9H928.5H963.1H997.7H1032.3H1066.8H1101.4H1136V248H64Z" fill="url(#area)"/>
-      <path d="M64 248L98.6 235.7L133.2 235.7L167.7 235.7L202.3 235.7L236.9 223.4L271.5 223.4L306.1 208L340.6 208L375.2 208L409.8 198.8L444.4 198.8L479 186.5L513.5 186.5L548.1 186.5L582.7 143.4L617.3 121.8L651.9 88L686.5 88L721 88L755.6 88L790.2 88L824.8 88L859.4 88L893.9 88L928.5 88L963.1 88L997.7 88L1032.3 88L1066.8 88L1101.4 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
-      <path d="M64 202.3H98.6V248H133.2H167.7H202.3V202.3H236.9V248H271.5V190.9H306.1V248H340.6H375.2V213.7H409.8V248H444.4V202.3H479V248H513.5H548.1V88H582.7V168H617.3V122.3H651.9V248H686.5H721H755.6H790.2H824.8H859.4H893.9H928.5H963.1H997.7H1032.3H1066.8H1101.4H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M64 202.3H97.5V248H131H164.5H198V202.3H231.5V248H265V190.9H298.5V248H332H365.5V213.7H399V248H432.5V202.3H466V248H499.5H533V88H566.5V168H600V122.3H633.5V248H667H700.5H734H767.5H801H834.5H868H901.5H935H968.5H1002H1035.5H1069H1102.5H1136V248H64Z" fill="url(#area)"/>
+      <path d="M64 248L97.5 235.7L131 235.7L164.5 235.7L198 235.7L231.5 223.4L265 223.4L298.5 208L332 208L365.5 208L399 198.8L432.5 198.8L466 186.5L499.5 186.5L533 186.5L566.5 143.4L600 121.8L633.5 88L667 88L700.5 88L734 88L767.5 88L801 88L834.5 88L868 88L901.5 88L935 88L968.5 88L1002 88L1035.5 88L1069 88L1102.5 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
+      <path d="M64 202.3H97.5V248H131H164.5H198V202.3H231.5V248H265V190.9H298.5V248H332H365.5V213.7H399V248H432.5V202.3H466V248H499.5H533V88H566.5V168H600V122.3H633.5V248H667H700.5H734H767.5H801H834.5H868H901.5H935H968.5H1002H1035.5H1069H1102.5H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
     </g>
   </g>
   <rect x="64" y="71" width="2" height="190" fill="#2dd4bf" filter="url(#glow)" opacity="0">
@@ -52,8 +52,8 @@
   </rect>
 
   <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#6e7681">
-    <text x="81.3" y="282" text-anchor="middle">Oct 2</text><text x="219.6" y="282" text-anchor="middle">Oct 6</text><text x="357.9" y="282" text-anchor="middle">Oct 10</text><text x="496.3" y="282" text-anchor="middle">Oct 14</text><text x="634.6" y="282" text-anchor="middle">Oct 18</text><text x="772.9" y="282" text-anchor="middle">Oct 22</text><text x="911.2" y="282" text-anchor="middle">Oct 26</text><text x="1049.5" y="282" text-anchor="middle">Oct 30</text>
-    <text x="64" y="304">updated 2026-11-01 · re-rendered daily by GitHub Actions</text>
-    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   31 days</text>
+    <text x="80.8" y="282" text-anchor="middle">Oct 2</text><text x="214.8" y="282" text-anchor="middle">Oct 6</text><text x="348.8" y="282" text-anchor="middle">Oct 10</text><text x="482.8" y="282" text-anchor="middle">Oct 14</text><text x="616.8" y="282" text-anchor="middle">Oct 18</text><text x="750.8" y="282" text-anchor="middle">Oct 22</text><text x="884.8" y="282" text-anchor="middle">Oct 26</text><text x="1018.8" y="282" text-anchor="middle">Oct 30</text>
+    <text x="64" y="304">updated 2026-11-02 · re-rendered daily by GitHub Actions</text>
+    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   32 days</text>
   </g>
 </svg>
