@@ -41,9 +41,9 @@
   <g>
     <animate attributeName="opacity" values="1;1;0.35;0;1" keyTimes="0;0.86;0.95;0.99;1" dur="9.0s" repeatCount="indefinite"/>
     <g clip-path="url(#sweep)">
-      <path d="M64 202.3H97.5V248H131H164.5H198V202.3H231.5V248H265V190.9H298.5V248H332H365.5V213.7H399V248H432.5V202.3H466V248H499.5H533V88H566.5V168H600V122.3H633.5V248H667H700.5H734H767.5H801H834.5H868H901.5H935H968.5H1002H1035.5H1069H1102.5H1136V248H64Z" fill="url(#area)"/>
-      <path d="M64 248L97.5 235.7L131 235.7L164.5 235.7L198 235.7L231.5 223.4L265 223.4L298.5 208L332 208L365.5 208L399 198.8L432.5 198.8L466 186.5L499.5 186.5L533 186.5L566.5 143.4L600 121.8L633.5 88L667 88L700.5 88L734 88L767.5 88L801 88L834.5 88L868 88L901.5 88L935 88L968.5 88L1002 88L1035.5 88L1069 88L1102.5 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
-      <path d="M64 202.3H97.5V248H131H164.5H198V202.3H231.5V248H265V190.9H298.5V248H332H365.5V213.7H399V248H432.5V202.3H466V248H499.5H533V88H566.5V168H600V122.3H633.5V248H667H700.5H734H767.5H801H834.5H868H901.5H935H968.5H1002H1035.5H1069H1102.5H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M64 202.3H96.5V248H129H161.5H193.9V202.3H226.4V248H258.9V190.9H291.4V248H323.9H356.4V213.7H388.8V248H421.3V202.3H453.8V248H486.3H518.8V88H551.3V168H583.8V122.3H616.2V248H648.7H681.2H713.7H746.2H778.7H811.2H843.6H876.1H908.6H941.1H973.6H1006.1H1038.5H1071H1103.5H1136V248H64Z" fill="url(#area)"/>
+      <path d="M64 248L96.5 235.7L129 235.7L161.5 235.7L193.9 235.7L226.4 223.4L258.9 223.4L291.4 208L323.9 208L356.4 208L388.8 198.8L421.3 198.8L453.8 186.5L486.3 186.5L518.8 186.5L551.3 143.4L583.8 121.8L616.2 88L648.7 88L681.2 88L713.7 88L746.2 88L778.7 88L811.2 88L843.6 88L876.1 88L908.6 88L941.1 88L973.6 88L1006.1 88L1038.5 88L1071 88L1103.5 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
+      <path d="M64 202.3H96.5V248H129H161.5H193.9V202.3H226.4V248H258.9V190.9H291.4V248H323.9H356.4V213.7H388.8V248H421.3V202.3H453.8V248H486.3H518.8V88H551.3V168H583.8V122.3H616.2V248H648.7H681.2H713.7H746.2H778.7H811.2H843.6H876.1H908.6H941.1H973.6H1006.1H1038.5H1071H1103.5H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
     </g>
   </g>
   <rect x="64" y="71" width="2" height="190" fill="#2dd4bf" filter="url(#glow)" opacity="0">
@@ -52,8 +52,8 @@
   </rect>
 
   <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#6e7681">
-    <text x="80.8" y="282" text-anchor="middle">Oct 2</text><text x="214.8" y="282" text-anchor="middle">Oct 6</text><text x="348.8" y="282" text-anchor="middle">Oct 10</text><text x="482.8" y="282" text-anchor="middle">Oct 14</text><text x="616.8" y="282" text-anchor="middle">Oct 18</text><text x="750.8" y="282" text-anchor="middle">Oct 22</text><text x="884.8" y="282" text-anchor="middle">Oct 26</text><text x="1018.8" y="282" text-anchor="middle">Oct 30</text>
-    <text x="64" y="304">updated 2026-11-02 · re-rendered daily by GitHub Actions</text>
-    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   32 days</text>
+    <text x="80.2" y="282" text-anchor="middle">Oct 2</text><text x="210.2" y="282" text-anchor="middle">Oct 6</text><text x="340.1" y="282" text-anchor="middle">Oct 10</text><text x="470.1" y="282" text-anchor="middle">Oct 14</text><text x="600" y="282" text-anchor="middle">Oct 18</text><text x="729.9" y="282" text-anchor="middle">Oct 22</text><text x="859.9" y="282" text-anchor="middle">Oct 26</text><text x="989.8" y="282" text-anchor="middle">Oct 30</text>
+    <text x="64" y="304">updated 2026-11-03 · re-rendered daily by GitHub Actions</text>
+    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   33 days</text>
   </g>
 </svg>
