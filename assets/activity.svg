@@ -41,9 +41,9 @@
   <g>
     <animate attributeName="opacity" values="1;1;0.35;0;1" keyTimes="0;0.86;0.95;0.99;1" dur="9.0s" repeatCount="indefinite"/>
     <g clip-path="url(#sweep)">
-      <path d="M64 202.3H88.9V248H113.9H138.8H163.7V202.3H188.7V248H213.6V190.9H238.5V248H263.4H288.4V213.7H313.3V248H338.2V202.3H363.2V248H388.1H413V88H438V168H462.9V122.3H487.8V248H512.7H537.7H562.6H587.5H612.5H637.4H662.3H687.3H712.2H737.1H762H787H811.9H836.8H861.8H886.7H911.6H936.6H961.5H986.4H1011.3H1036.3H1061.2H1086.1H1111.1H1136V248H64Z" fill="url(#area)"/>
-      <path d="M64 248L88.9 235.7L113.9 235.7L138.8 235.7L163.7 235.7L188.7 223.4L213.6 223.4L238.5 208L263.4 208L288.4 208L313.3 198.8L338.2 198.8L363.2 186.5L388.1 186.5L413 186.5L438 143.4L462.9 121.8L487.8 88L512.7 88L537.7 88L562.6 88L587.5 88L612.5 88L637.4 88L662.3 88L687.3 88L712.2 88L737.1 88L762 88L787 88L811.9 88L836.8 88L861.8 88L886.7 88L911.6 88L936.6 88L961.5 88L986.4 88L1011.3 88L1036.3 88L1061.2 88L1086.1 88L1111.1 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
-      <path d="M64 202.3H88.9V248H113.9H138.8H163.7V202.3H188.7V248H213.6V190.9H238.5V248H263.4H288.4V213.7H313.3V248H338.2V202.3H363.2V248H388.1H413V88H438V168H462.9V122.3H487.8V248H512.7H537.7H562.6H587.5H612.5H637.4H662.3H687.3H712.2H737.1H762H787H811.9H836.8H861.8H886.7H911.6H936.6H961.5H986.4H1011.3H1036.3H1061.2H1086.1H1111.1H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+      <path d="M64 202.3H88.4V248H112.7H137.1H161.5V202.3H185.8V248H210.2V190.9H234.5V248H258.9H283.3V213.7H307.6V248H332V202.3H356.4V248H380.7H405.1V88H429.5V168H453.8V122.3H478.2V248H502.5H526.9H551.3H575.6H600H624.4H648.7H673.1H697.5H721.8H746.2H770.5H794.9H819.3H843.6H868H892.4H916.7H941.1H965.5H989.8H1014.2H1038.5H1062.9H1087.3H1111.6H1136V248H64Z" fill="url(#area)"/>
+      <path d="M64 248L88.4 235.7L112.7 235.7L137.1 235.7L161.5 235.7L185.8 223.4L210.2 223.4L234.5 208L258.9 208L283.3 208L307.6 198.8L332 198.8L356.4 186.5L380.7 186.5L405.1 186.5L429.5 143.4L453.8 121.8L478.2 88L502.5 88L526.9 88L551.3 88L575.6 88L600 88L624.4 88L648.7 88L673.1 88L697.5 88L721.8 88L746.2 88L770.5 88L794.9 88L819.3 88L843.6 88L868 88L892.4 88L916.7 88L941.1 88L965.5 88L989.8 88L1014.2 88L1038.5 88L1062.9 88L1087.3 88L1111.6 88L1136 88" fill="none" stroke="#f0b429" stroke-width="1.6" stroke-opacity="0.85" stroke-linejoin="round"/>
+      <path d="M64 202.3H88.4V248H112.7H137.1H161.5V202.3H185.8V248H210.2V190.9H234.5V248H258.9H283.3V213.7H307.6V248H332V202.3H356.4V248H380.7H405.1V88H429.5V168H453.8V122.3H478.2V248H502.5H526.9H551.3H575.6H600H624.4H648.7H673.1H697.5H721.8H746.2H770.5H794.9H819.3H843.6H868H892.4H916.7H941.1H965.5H989.8H1014.2H1038.5H1062.9H1087.3H1111.6H1136" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
     </g>
   </g>
   <rect x="64" y="71" width="2" height="190" fill="#2dd4bf" filter="url(#glow)" opacity="0">
@@ -52,8 +52,8 @@
   </rect>
 
   <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace" font-size="11" fill="#6e7681">
-    <text x="76.5" y="282" text-anchor="middle">Oct 2</text><text x="201.1" y="282" text-anchor="middle">Oct 7</text><text x="325.8" y="282" text-anchor="middle">Oct 12</text><text x="450.4" y="282" text-anchor="middle">Oct 17</text><text x="575.1" y="282" text-anchor="middle">Oct 22</text><text x="699.7" y="282" text-anchor="middle">Oct 27</text><text x="824.4" y="282" text-anchor="middle">Nov 1</text><text x="949" y="282" text-anchor="middle">Nov 6</text><text x="1073.7" y="282" text-anchor="middle">Nov 11</text>
-    <text x="64" y="304">updated 2026-11-13 · re-rendered daily by GitHub Actions</text>
-    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   43 days</text>
+    <text x="76.2" y="282" text-anchor="middle">Oct 2</text><text x="222.4" y="282" text-anchor="middle">Oct 8</text><text x="368.5" y="282" text-anchor="middle">Oct 14</text><text x="514.7" y="282" text-anchor="middle">Oct 20</text><text x="660.9" y="282" text-anchor="middle">Oct 26</text><text x="807.1" y="282" text-anchor="middle">Nov 1</text><text x="953.3" y="282" text-anchor="middle">Nov 7</text>
+    <text x="64" y="304">updated 2026-11-14 · re-rendered daily by GitHub Actions</text>
+    <text x="1136" y="304" text-anchor="end" xml:space="preserve"><tspan fill="#2dd4bf">━</tspan> CH1 contributions / day   <tspan fill="#f0b429">━</tspan> CH2 running total   ·   44 days</text>
   </g>
 </svg>
